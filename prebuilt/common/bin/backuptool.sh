@@ -5,7 +5,7 @@
 
 export C=/tmp/backupdir
 export S=/system
-export V=10
+export V=Hellybean
 
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
@@ -22,10 +22,7 @@ restore_addon_d() {
 
 # Proceed only if /system is the expected major version
 check_prereq() {
-if ( ! grep -q "^ro.cm.version=$V.*" /system/build.prop ); then
-  echo "Not backing up files from incompatible version."
-  exit 127
-fi
+echo "$V"
 }
 
 # Execute /system/addon.d/*.sh scripts with $1 parameter
