@@ -6,6 +6,7 @@
 export C=/tmp/backupdir
 export S=/system
 export V=Hellybean
+
 persist_props="ro.sf.lcd_density"
 sysroot="/system"
 saveroot="/tmp/save"

@@ -96,6 +96,12 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
 
+# Diablo Kernel support
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/00_setpermissions:system/etc/init.d/00_setpermissions \
+    vendor/cm/prebuilt/common/etc/init.d/01_inq:system/etc/init.d/01_inq \
+    vendor/cm/prebuilt/common/etc/init.d/02_cache:system/etc/init.d/02_cache 
+
 # userinit support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
@@ -116,6 +122,7 @@ PRODUCT_COPY_FILES += \
 # Terminal Emulator
 PRODUCT_COPY_FILES +=  \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
+    vendor/cm/prebuilt/GooManager.apk:system/app/GooManager.apk \
     vendor/cm/xposed/XposedAppSetting.apk:system/app/XposedAppSetting.apk \
     vendor/cm/xposed/XposedInstaller.apk:system/app/XposedInstaller.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
@@ -151,7 +158,7 @@ PRODUCT_PACKAGES += \
     Superuser \
     BluetoothExt \
     su
-
+    
 # Optional CM packages
 PRODUCT_PACKAGES += \
     VoicePlus \
@@ -170,7 +177,6 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     HBWallpapers \
     Apollo \
-    CMUpdater \
     CMFileManager \
     LockClock \
     CMAccount
@@ -269,10 +275,12 @@ endif
 
     CM_VERSION := Hellybean-$(shell date -u +%Y%m%d)-$(CM_BUILD)$(CM_EXTRAVERSION)
 
-
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
-  ro.modversion=$(CM_VERSION)
+  ro.modversion=$(CM_VERSION) \
+  ro.goo.developerid=thddude \
+  ro.goo.rom=Hellybean-4.3-Linaro \
+  ro.goo.version=$(shell date -u +%Y%m%d)
 
 -include vendor/cm/sepolicy/sepolicy.mk
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
