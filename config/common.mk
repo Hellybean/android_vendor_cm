@@ -90,7 +90,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # ThdDude ;)
-ifneq ($(ThdDude),true)
+ifneq ($(thddude),true)
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/GooManager.apk:system/app/GooManager.apk \
     vendor/cm/prebuilt/common/etc/init.d/00_setpermissions:system/etc/init.d/00_setpermissions \
