@@ -89,6 +89,22 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
 
+# ThdDude ;)
+ifneq ($(ThdDude),true)
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/GooManager.apk:system/app/GooManager.apk \
+    vendor/cm/prebuilt/common/etc/init.d/00_setpermissions:system/etc/init.d/00_setpermissions \
+    vendor/cm/prebuilt/common/etc/init.d/01_inq:system/etc/init.d/01_inq \
+    vendor/cm/prebuilt/common/etc/init.d/02_cache:system/etc/init.d/02_cache 
+
+
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.goo.developerid=thddude \
+  ro.goo.rom=Hellybean-4.3-Linaro \
+  ro.goo.version=$(shell date -u +%Y%m%d)
+endif
+
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
