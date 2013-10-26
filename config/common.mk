@@ -1,6 +1,5 @@
 PRODUCT_BRAND ?= cyanogenmod
 
--include vendor/cm-priv/keys.mk
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
@@ -89,6 +88,22 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
     vendor/cm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
+
+# ThdDude ;)
+ifneq ($(ThdDude),true)
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/GooManager.apk:system/app/GooManager.apk \
+    vendor/cm/prebuilt/common/etc/init.d/00_setpermissions:system/etc/init.d/00_setpermissions \
+    vendor/cm/prebuilt/common/etc/init.d/01_inq:system/etc/init.d/01_inq \
+    vendor/cm/prebuilt/common/etc/init.d/02_cache:system/etc/init.d/02_cache 
+
+
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.goo.developerid=thddude \
+  ro.goo.rom=Hellybean-4.3-Linaro \
+  ro.goo.version=$(shell date -u +%Y%m%d)
+endif
+
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -302,4 +317,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.goo.version=$(shell date -u +%Y%m%d)
 
 -include vendor/cm/sepolicy/sepolicy.mk
+
+-include vendor/cm-priv/keys/keys.mk
+
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
