@@ -90,7 +90,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # ThdDude ;)
-ifneq ($(ThdDude),true)
+ifneq ($(thddude),true)
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/GooManager.apk:system/app/GooManager.apk \
     vendor/cm/prebuilt/common/etc/init.d/00_setpermissions:system/etc/init.d/00_setpermissions \
@@ -126,11 +126,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/compcache:system/bin/compcache \
     vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
-
-# xposed framework
-PRODUCT_COPY_FILES +=  \
-    vendor/cm/xposed/XposedAppSetting.apk:system/app/XposedAppSetting.apk \
-    vendor/cm/xposed/XposedInstaller.apk:system/app/XposedInstaller.apk
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
@@ -231,13 +226,14 @@ PRODUCT_PACKAGES += \
 ifneq ($(TARGET_BUILD_VARIANT),user)
 
 PRODUCT_PACKAGES += \
-    CMUpdater \
     Superuser \
     su
 
 # Terminal Emulator
 PRODUCT_COPY_FILES +=  \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
+    vendor/cm/xposed/XposedAppSetting.apk:system/app/XposedAppSetting.apk \
+    vendor/cm/xposed/XposedInstaller.apk:system/app/XposedInstaller.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -306,10 +302,9 @@ endif
 
     CM_VERSION := Hellybean-$(shell date -u +%Y%m%d)-$(CM_BUILD)$(CM_EXTRAVERSION)
 
-
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
-  ro.modversion=$(CM_VERSION)
+  ro.modversion=$(CM_VERSION) 
 
 -include vendor/cm/sepolicy/sepolicy.mk
 
