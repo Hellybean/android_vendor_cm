@@ -300,7 +300,7 @@ else
     CM_EXTRAVERSION :=
 endif
 
-    CM_VERSION := Hellybean-$(shell date -u +%Y%m%d)-$(CM_BUILD)$(CM_EXTRAVERSION)
+    CM_VERSION := Hellkat-$(shell date -u +%Y%m%d)-$(CM_BUILD)$(CM_EXTRAVERSION)
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
