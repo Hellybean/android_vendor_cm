@@ -90,7 +90,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # ThdDude ;)
-ifeq ($(thddude),true)
+ifneq ($(thddude),true)
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/GooManager.apk:system/app/GooManager.apk \
     vendor/cm/prebuilt/common/etc/init.d/00_setpermissions:system/etc/init.d/00_setpermissions \
@@ -100,7 +100,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.goo.developerid=thddude \
-  ro.goo.rom=Hellybean-4.3-Linaro \
+  ro.goo.rom=HellKat \
   ro.goo.version=$(shell date -u +%Y%m%d)
 endif
 
@@ -232,8 +232,6 @@ PRODUCT_PACKAGES += \
 # Terminal Emulator
 PRODUCT_COPY_FILES +=  \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
-    vendor/cm/xposed/XposedAppSetting.apk:system/app/XposedAppSetting.apk \
-    vendor/cm/xposed/XposedInstaller.apk:system/app/XposedInstaller.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -296,7 +294,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
+    CM_BUILDTYPE := Linaro
     CM_EXTRAVERSION :=
 endif
 
