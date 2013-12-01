@@ -231,6 +231,8 @@ PRODUCT_PACKAGES += \
 # Terminal Emulator
 PRODUCT_COPY_FILES +=  \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
+    vendor/cm/xposed/XposedAppSetting.apk:system/app/XposedAppSetting.apk \
+    vendor/cm/xposed/XposedInstaller.apk:system/app/XposedInstaller.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
