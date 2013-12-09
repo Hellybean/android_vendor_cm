@@ -104,7 +104,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.goo.version=$(shell date -u +%Y%m%d)
 endif
 
-
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
