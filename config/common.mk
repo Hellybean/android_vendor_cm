@@ -163,8 +163,7 @@ PRODUCT_PACKAGES += \
     Apollo \
     CMFileManager \
     LockClock \
-    CMFota \
-    WhisperPush
+    CMFota
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
