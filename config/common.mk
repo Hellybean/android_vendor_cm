@@ -179,6 +179,7 @@ PRODUCT_PACKAGES += \
     VoiceDialer \
     SoundRecorder \
     Basic \
+    HALO \
     libemoji
 
 # Custom CM packages
