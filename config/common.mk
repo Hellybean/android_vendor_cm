@@ -178,6 +178,7 @@ PRODUCT_PACKAGES += \
     VoicePlus \
     VoiceDialer \
     SoundRecorder \
+	ScreenRecorder \
     Basic \
     HALO \
     libemoji
