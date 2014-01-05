@@ -170,10 +170,13 @@ PRODUCT_PACKAGES += \
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
+<<<<<<< HEAD
     VoicePlus \
     VoiceDialer \
     SoundRecorder \
 	ScreenRecorder \
+=======
+>>>>>>> ae551b3... Remove some optional packages from "mini" builds
     Basic \
     HALO \
     libemoji
