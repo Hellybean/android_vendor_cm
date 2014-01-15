@@ -94,8 +94,13 @@ then
 
     if [ "$2" != "" ];
     then
-        CERT=build/target/product/security/$2.x509.pem
-        KEY=build/target/product/security/$2.pk8
+        if [ "$DEFAULT_SYSTEM_DEV_CERTIFICATE" ]; then
+            CERT_PATH=`dirname $DEFAULT_SYSTEM_DEV_CERTIFICATE`
+        else
+            CERT_PATH=build/target/product/security
+        fi
+        CERT="$CERT_PATH"/$2.x509.pem
+        KEY="$CERT_PATH"/$2.pk8
         if [ ! -f "$ANDROID_BUILD_TOP/$CERT" ];
         then
             echo -e $CL_RED"$CERT does not exist!"$CL_RST;
