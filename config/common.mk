@@ -87,7 +87,7 @@ PRODUCT_COPY_FILES += \
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.goo.developerid=thddude \
+  ro.goo.developerid=helldevs \
   ro.goo.rom=HellKat \
   ro.goo.version=$(shell date -u +%Y%m%d)
 endif
