@@ -172,6 +172,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Basic \
     ScreenRecorder \
+    libscreenrecorder \
     HALO \
     libemoji
 
