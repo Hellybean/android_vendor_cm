@@ -29,3 +29,7 @@ PRODUCT_PACKAGES += \
     libvideoeditor_osal \
     libvideoeditor_videofilters \
     libvideoeditorplayer
+
+# Extra tools in CM
+PRODUCT_PACKAGES += \
+    vim
