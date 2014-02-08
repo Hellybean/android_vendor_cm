@@ -193,6 +193,7 @@ PRODUCT_PACKAGES += \
     Apollo \
     CMFileManager \
     LockClock \
+    CMAccount \
     CMFota
 
 # CM Hardware Abstraction Framework
